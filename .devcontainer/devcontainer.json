@@ -1,22 +1,57 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/universal
+// // For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// // README at: https://github.com/devcontainers/templates/tree/main/src/universal
+// {
+// 	"name": "Default Linux Universal",
+// 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+// 	"image": "mcr.microsoft.com/devcontainers/universal:2-linux"
+
+// 	// Features to add to the dev container. More info: https://containers.dev/features.
+// 	// "features": {},
+
+// 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+// 	// "forwardPorts": [],
+
+// 	// Use 'postCreateCommand' to run commands after the container is created.
+// 	// "postCreateCommand": "uname -a",
+
+// 	// Configure tool-specific properties.
+// 	// "customizations": {},
+
+// 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+// 	// "remoteUser": "root"
+// }
+
 {
-	"name": "Default Linux Universal",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/universal:2-linux"
-
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "uname -a",
-
-	// Configure tool-specific properties.
-	// "customizations": {},
-
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
-}
+	"name": "CIS285 Dev Env",
+  
+	// 1) Build from your Dockerfile instead of the stock image
+	"build": {
+	  "dockerfile": "Dockerfile"
+	},
+  
+	// 2) Tell the container where your code lives
+	"workspaceFolder": "/workspaces/mohammad_zawahreh",
+  
+	// 3) Disable the Git‑LFS feature (so its fetch step is skipped)
+	"features": {
+	  "git-lfs": "none"
+	},
+  
+	// 4) Install these VS Code extensions via the new schema
+	"customizations": {
+	  "vscode": {
+		"extensions": [
+		  "ms-azuretools.vscode-docker",
+		  "ms-python.python",
+		  "esbenp.prettier-vscode",
+		  "vue.volar",
+		  "octref.vetur"
+		]
+	  }
+	},
+  
+	// (Optional) forward ports if you like
+	"forwardPorts": [ 8080, 5000 ]
+  }
+  
+  
